@@ -7,7 +7,7 @@ on:
     branches:
       - main
     paths:
-      = ubuntu22.04-openjdk11
+      - ubuntu22.04-openjdk11
       - .github/workflows/docker-image-ubuntu-2204-openjdk11.yml
   workflow_dispatch:
 jobs:
