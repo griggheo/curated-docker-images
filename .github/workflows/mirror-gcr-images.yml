@@ -14,7 +14,7 @@ jobs:
     uses: codepraxis-io/github-actions/.github/workflows/docker-image-mirror-workflow.yml@main
     with:
       upstream-registry: gcr.io
-      upstream-image-list: '["distroless/java11-debian11", "distroless/java17-debian11"]'
+      upstream-image-list: '["distroless/java11-debian11:latest", "distroless/java17-debian11:latest"]'
     secrets:
       DESTINATION_REGISTRY_USERNAME: ${{ secrets.GH_PACKAGES_USERNAME }} 
       DESTINATION_REGISTRY_PASSWORD: ${{ secrets.GH_PAT }}
