@@ -1,0 +1,25 @@
+name: docker-image-ubuntu-2204-openjdk11
+
+on:
+  schedule:
+    - cron: '0 7 * * *'
+  push:
+    branches:
+      - main
+    paths:
+      = ubuntu22.04-openjdk11
+      - .github/workflows/docker-image-ubuntu-2204-openjdk11.yml
+  workflow_dispatch:
+jobs:
+  pipeline:
+    uses: codepraxis-io/github-actions/.github/workflows/docker-build-scan-push-workflow.yml@main
+    with:
+      docker_context_dir: ubuntu22.04-openjdk11
+      docker_image_name: ubuntu22.04
+      docker_image_tag: openjdk11
+    secrets:
+      DESTINATION_REGISTRY_USERNAME: ${{ secrets.GH_PACKAGES_USERNAME }} 
+      DESTINATION_REGISTRY_PASSWORD: ${{ secrets.GH_PAT }}
+      COSIGN_PRIVATE_KEY: ${{ secrets.COSIGN_PRIVATE_KEY }} 
+      COSIGN_PRIVATE_KEY_PASSWORD: ${{ secrets.COSIGN_PRIVATE_KEY_PASSWORD }}
+      COSIGN_PUBLIC_KEY: ${{ secrets.COSIGN_PUBLIC_KEY }}
