@@ -1,0 +1,20 @@
+name: mirror-dockerhub-images
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  push:
+    branches:
+      - master
+    paths:
+      - .github/workflows/mirror-dockerhub-images.yml
+  workflow_dispatch:
+jobs:
+  pipeline:
+    uses: codepraxis-io/github-actions/.github/workflows/docker-image-mirror-workflow.yml@main
+    with:
+      upstream-registry: registry.hub.docker.com
+      upstream-image-list: '["library/ubuntu:22.04", "library/alpine:3.16"]'
+    secrets:
+      DESTINATION_REGISTRY_USERNAME: ${{ secrets.GH_PACKAGES_USERNAME }} 
+      DESTINATION_REGISTRY_PASSWORD: ${{ secrets.GH_PAT }}
