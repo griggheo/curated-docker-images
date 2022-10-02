@@ -18,8 +18,8 @@ jobs:
       docker_image_name: ubuntu22.04
       docker_image_tag: openjdk11
     secrets:
-      DESTINATION_REGISTRY_USERNAME: ${{ secrets.GH_PACKAGES_USERNAME }} 
-      DESTINATION_REGISTRY_PASSWORD: ${{ secrets.GH_PAT }}
-      COSIGN_PRIVATE_KEY: ${{ secrets.COSIGN_PRIVATE_KEY }} 
-      COSIGN_PRIVATE_KEY_PASSWORD: ${{ secrets.COSIGN_PRIVATE_KEY_PASSWORD }}
-      COSIGN_PUBLIC_KEY: ${{ secrets.COSIGN_PUBLIC_KEY }}
+      destination_registry_username: ${{ secrets.GH_PACKAGES_USERNAME }} 
+      destination_registry_password: ${{ secrets.GH_PAT }}
+      cosign_private_key: ${{ secrets.COSIGN_PRIVATE_KEY }} 
+      cosign_private_key_password: ${{ secrets.COSIGN_PRIVATE_KEY_PASSWORD }}
+      cosign_public_key: ${{ secrets.COSIGN_PUBLIC_KEY }}
