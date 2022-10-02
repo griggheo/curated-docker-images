@@ -23,3 +23,4 @@ jobs:
       cosign_private_key: ${{ secrets.COSIGN_PRIVATE_KEY }} 
       cosign_private_key_password: ${{ secrets.COSIGN_PRIVATE_KEY_PASSWORD }}
       cosign_public_key: ${{ secrets.COSIGN_PUBLIC_KEY }}
+      
