@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 jobs:
   pipeline:
-    uses: codepraxis-io/github-actions/.github/workflows/docker-run-scan-push-workflow.yml@main
+    uses: codepraxis-io/github-actions/.github/workflows/docker-build-scan-push-workflow.yml@main
     with:
       docker_context_dir: alpine3.16-run
       docker_image_name: alpine3.16
