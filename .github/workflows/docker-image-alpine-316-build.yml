@@ -17,7 +17,6 @@ jobs:
       docker_context_dir: alpine3.16-build
       docker_image_name: alpine3.16
       docker_image_tag: build
-      docker_build_type: kaniko
     secrets:
       destination_registry_username: ${{ secrets.GH_PACKAGES_USERNAME }} 
       destination_registry_password: ${{ secrets.GH_PAT }}
