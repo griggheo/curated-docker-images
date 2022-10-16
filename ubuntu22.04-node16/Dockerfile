@@ -12,4 +12,4 @@ RUN apt-get install -y nodejs
 RUN rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 # Switch to non-root user
-USER devsecops
+#USER devsecops

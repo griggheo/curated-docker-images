@@ -32,5 +32,5 @@ RUN addgroup -g ${GROUP_ID} ${GROUP_NAME} \
 RUN rm -rf /var/cache/apk/*
 
 # Switch to non-root user
-USER devsecops
+#USER devsecops
 

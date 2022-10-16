@@ -13,4 +13,4 @@ RUN apt update -y \
 RUN rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 # Switch to non-root user
-USER devsecops
+#USER devsecops

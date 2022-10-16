@@ -46,5 +46,5 @@ RUN useradd -u ${USER_ID} -U -m -d ${USER_HOMEDIR} ${USER_NAME}
 RUN rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 # Become non-root user
-USER devsecops
+#USER devsecops
 
