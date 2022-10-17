@@ -1,0 +1,25 @@
+name: docker-image-ubuntu-2204-python310-run
+
+on:
+  schedule:
+    - cron: '0 7 * * *'
+  push:
+    branches:
+      - main
+    paths:
+      - ubuntu22.04-python3.10-run
+      - .github/workflows/docker-image-ubuntu-2204-python310-run.yml
+  workflow_dispatch:
+jobs:
+  pipeline:
+    uses: codepraxis-io/github-actions/.github/workflows/docker-build-scan-push-workflow.yml@main
+    with:
+      docker_context_dir: ubuntu22.04-python3.10-run
+      docker_image_name: ubuntu22.04
+      docker_image_tag: python3.10-run
+    secrets:
+      destination_registry_username: ${{ secrets.GH_PACKAGES_USERNAME }} 
+      destination_registry_password: ${{ secrets.GH_PAT }}
+      cosign_private_key: ${{ secrets.COSIGN_PRIVATE_KEY }} 
+      cosign_private_key_password: ${{ secrets.COSIGN_PRIVATE_KEY_PASSWORD }}
+      cosign_public_key: ${{ secrets.COSIGN_PUBLIC_KEY }}
