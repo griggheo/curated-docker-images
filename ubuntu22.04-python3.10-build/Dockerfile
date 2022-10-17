@@ -5,7 +5,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 USER root
 
 # Install pip and venv
-RUN apt install python3-venv -y \
+RUN apt-get update -y \
+    && apt install python3-venv -y \
     && apt install python3-distutils -y \
     && apt install python3-pip -y
 
