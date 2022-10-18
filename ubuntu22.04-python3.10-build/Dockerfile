@@ -15,3 +15,6 @@ RUN pip3 install requests
 
 # Cleanup
 RUN rm -rf /var/lib/apt/lists/* /var/cache/apt/*
+
+# switch to non-root user
+USER devsecops
