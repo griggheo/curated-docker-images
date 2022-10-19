@@ -4,10 +4,14 @@ on:
   workflow_dispatch:
 
 jobs:
-  - uses: actions/delete-package-versions@v3
-    with:
-      owner: 'codepraxis-io'
-      repo: 'packages'
-      package-name: 'spring-music'
-      token: ${{ secrets.GITHUB_PAT }}
-      min-versions-to-keep: 3
+  delete-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete old images    
+        uses: actions/delete-package-versions@v3
+        with:
+          owner: 'codepraxis-io'
+          repo: 'packages'
+          package-name: 'spring-music'
+          token: ${{ secrets.GITHUB_PAT }}
+          min-versions-to-keep: 3
