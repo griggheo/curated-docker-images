@@ -12,10 +12,29 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        tag: ['2.0.0-amazoncorretto-17-alpine3-15',
-              '2.0.0-distroless-java17-debian11',
-              '2.0.0-distroless-java17-debian11-multistage',
-              '2.0.0-distroless-java11-debian11-multistage']
+        tag: ['sha256-699d1653568c1a746e924e92adf4c012ad5586e90811101001c49da2c599cb7f.att',
+              'sha256-699d1653568c1a746e924e92adf4c012ad5586e90811101001c49da2c599cb7f.sig',
+              '2.0.0-curated-alpine3.16-openjdk17',
+              'sha256-03283fc6fbb0d18dffc8e58efe51a98c97690d74b2ee3969f0ff260b49317777.att',
+              'sha256-03283fc6fbb0d18dffc8e58efe51a98c97690d74b2ee3969f0ff260b49317777.sig',
+              'sha256-3d2fbf0dd45a4be7fe63eaa7f1a61a63d244c83e73adc910dc12f1714b60d633.sig',
+              'sha256-17b98b571009b4610f0013554b8767cd63386e5a19f0c6882ec200844488057b.sig',
+              'sha256-d937c38f7436932c909d3f841d733cbe1bcb006453f5ea07eed46ef72573e569.sig',
+              'sha256-bb524df8bb56b93540c89421ddc691a6d48e7c36f27ecfdd07b136ea35d79e62.sig',
+              'sha256-d1d32b19fc3a0d0e278795bfcfb47f8fa50dc26f89fa44e7b0368ff72e20dfd1.sig',
+              'sha256-ab35f467e66da49dc39ae478134d3bfe14b1ceb9e387fabdc704d83c8cf8a465.sig',
+              'sha256-880efef82bd255b92a4ab2b6c50d92bc8d9440566eb7533c61b62c31ada2580f.sig',
+              'sha256-0a452306e06314dbf5d2033614c4567aee02bb8f17afa0d4d40487b978fd9500.sig',
+              'sha256-240a90451c2264a6d7a6e1c7c910b724b8bc5a022dd8d8ef6a64dfd41f1064b8.sig',
+              'sha256-ab8df7660759b290df06703e8e163c9be86b97b86f9916de26f7515152b0c690.sig',
+              'sha256-9ce2c99f4c7816521fbd43a8ae7d83b1601042fe8f3595e1dcf54b1c29d1b389.sig',
+              'sha256-b0af4395b7f6af4204a6031bac13411c4290ce5c28048a1cb15361942cf601bb.sig',
+              'sha256-855696c2b0384e24efa9923456465159eb501b333509fafd7a8be8c2f65e2c0a.sig',
+              'sha256-c92de48ffc5698ef93548fbfbdb7075da97119e586b1a170864637871cfb99c3.sig',
+              'sha256-e32e1aca37a4f1aa3558b15818e5733b83b13d3504de16b63df32388d4fd1310.sig',
+              'sha256-d696be9aeeb7306dc90bc25c8049871a8f1a425da0a4ed9c288e85c0a9210a7e.sig',
+              'sha256-d412f5d92b1da6e42e74f7e5afc4f5119d3c077bd97f02aa0360446b3e622ea7.sig',
+              '2.0.0-cnb']
     steps:
       - name: Delete image
         uses: bots-house/ghcr-delete-image-action@v1.0.0
