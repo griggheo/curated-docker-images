@@ -12,12 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        tag: ['sha256-53809537e15bb78d5eef05e810577d53eb8b0840a808e121326328737690a037.sig',
-              'sha256-e19c7a251682fd8b439a9588bab8b1ca13c4db2ba559ed8ecda2715b2300fe45.sig',  
-              'sha256-922fcffb75259ed5a856f88e3e6e6805b9d2b90ddc9188dbb0c2a94e583feace.sig',
-              'sha256-da0cd99f6210421ec0cf330b9798e2e49de335bb2c8d98199c91139713e43c13.sig',
-              'sha256-e5a628b44d7dc75d61e463ca26ec6f191bb393c772bf5a44f281f210b0d347d0.sig',
-              'sha256-8d365ddcff4a1d27f84e69ee521ffaaabed8307c45b5e296ede95ed9b2bf0f23.sig']
+        tag: ['sha256:4b1a9891e47b65e9ab9b28c85258959357253db0db5c926c7ce4cc5e666b1994']
     steps:
       - name: Delete image
         uses: bots-house/ghcr-delete-image-action@v1.0.0
