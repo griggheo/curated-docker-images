@@ -4,10 +4,10 @@ on:
   workflow_dispatch:
 
 jobs:
-- uses: actions/delete-package-versions@v3
-  with:
-    owner: 'codepraxis-io'
-    repo: 'packages'
-    package-name: 'spring-music'
-    token: ${{ secrets.GITHUB_PAT }}
-    min-versions-to-keep: 3
+  - uses: actions/delete-package-versions@v3
+    with:
+      owner: 'codepraxis-io'
+      repo: 'packages'
+      package-name: 'spring-music'
+      token: ${{ secrets.GITHUB_PAT }}
+      min-versions-to-keep: 3
