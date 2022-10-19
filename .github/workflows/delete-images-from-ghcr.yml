@@ -10,9 +10,9 @@ jobs:
   delete-images:
     name: Delete image from ghcr.io
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        tag: ['sha256:4b1a9891e47b65e9ab9b28c85258959357253db0db5c926c7ce4cc5e666b1994']
+    # strategy:
+    #   matrix:
+    #     tag: ['sha256:4b1a9891e47b65e9ab9b28c85258959357253db0db5c926c7ce4cc5e666b1994']
     steps:
       - name: Delete image
         uses: bots-house/ghcr-delete-image-action@v1.0.0
@@ -20,4 +20,6 @@ jobs:
           owner: codepraxis-io
           name: spring-music
           token: ${{ secrets.GHCR_TOKEN }}
-          tag: ${{ matrix.tag }}
+          #tag: ${{ matrix.tag }}
+          tag: latest
+          untagged-keep-latest: 1
