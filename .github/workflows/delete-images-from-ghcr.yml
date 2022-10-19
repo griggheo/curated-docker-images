@@ -1,4 +1,4 @@
-name: mirror-dockerhub-images
+name: delete-ghcr-images
 
 on:
   push:
@@ -16,5 +16,5 @@ jobs:
           owner: 'codepraxis-io'
           repo: 'packages'
           package-name: 'spring-music'
-          token: ${{ secrets.GITHUB_PAT }}
+          token: ${{ secrets.GH_PAT }}
           min-versions-to-keep: 3
