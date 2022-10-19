@@ -8,12 +8,12 @@ on:
 
 jobs:
   delete-images:
+    name: Delete image from ghcr.io
     runs-on: ubuntu-latest
     steps:
-      - name: Delete old images    
-        uses: actions/delete-package-versions@v3
+      - name: Delete image
+        uses: bots-house/ghcr-delete-image-action@v1.0.0
         with:
-          owner: 'codepraxis-io'
-          package-name: 'spring-music'
+          owner: codepraxis-io
+          name: spring-music
           token: ${{ secrets.GH_PAT }}
-          min-versions-to-keep: 3
