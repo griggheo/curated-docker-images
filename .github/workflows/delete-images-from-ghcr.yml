@@ -17,3 +17,4 @@ jobs:
           owner: codepraxis-io
           name: spring-music
           token: ${{ secrets.GH_PAT }}
+          untagged-keep-latest: 2
