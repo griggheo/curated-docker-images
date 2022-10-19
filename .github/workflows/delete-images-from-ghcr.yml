@@ -17,4 +17,4 @@ jobs:
           owner: codepraxis-io
           name: spring-music
           token: ${{ secrets.GH_PAT }}
-          untagged-keep-latest: 2
+          tag: 2.0.0-temurin-17-jre-jammy
