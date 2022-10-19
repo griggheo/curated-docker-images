@@ -10,6 +10,12 @@ jobs:
   delete-images:
     name: Delete image from ghcr.io
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        tag: ['2.0.0-amazoncorretto-17-alpine3-15',
+              '2.0.0-distroless-java17-debian11',
+              '2.0.0-distroless-java17-debian11-multistage',
+              '2.0.0-distroless-java11-debian11-multistage']
     steps:
       - name: Delete image
         uses: bots-house/ghcr-delete-image-action@v1.0.0
@@ -17,4 +23,4 @@ jobs:
           owner: codepraxis-io
           name: spring-music
           token: ${{ secrets.GHCR_TOKEN }}
-          tag: 2.0.0-temurin-17-jre-jammy
+          tag: ${{ matrix.tag }}
