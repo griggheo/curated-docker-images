@@ -14,7 +14,6 @@ jobs:
         uses: actions/delete-package-versions@v3
         with:
           owner: 'codepraxis-io'
-          repo: 'packages'
           package-name: 'spring-music'
           token: ${{ secrets.GH_PAT }}
           min-versions-to-keep: 3
