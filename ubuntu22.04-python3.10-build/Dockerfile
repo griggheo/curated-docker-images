@@ -10,8 +10,8 @@ RUN apt-get update -y \
     && apt install python3-distutils -y \
     && apt install python3-pip -y
 
-# install common python modules
-RUN pip3 install requests
+# install useful python modules
+RUN pip3 install requests cyclonedx-bom
 
 # Cleanup
 RUN rm -rf /var/lib/apt/lists/* /var/cache/apt/*
