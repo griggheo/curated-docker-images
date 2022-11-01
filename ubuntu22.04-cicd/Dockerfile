@@ -2,8 +2,8 @@ FROM ghcr.io/codepraxis-io/ubuntu22.04:base
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV go_version=1.18.6
-ENV cosign_version=1.12.1
-ENV crane_version=0.11.0
+ENV cosign_version=1.13.1
+ENV crane_version=0.12.0
 ENV ko_version=0.12.0
 
 USER root
