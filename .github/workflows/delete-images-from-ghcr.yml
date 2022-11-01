@@ -1,9 +1,9 @@
 name: delete-ghcr-images
 
 on:
-  push:
-    branches:
-      - main
+#  push:
+#    branches:
+#      - main
   workflow_dispatch:
 
 jobs:
@@ -12,7 +12,17 @@ jobs:
     runs-on: ubuntu-latest
     # strategy:
     #   matrix:
-    #     tag: ['sha256:4b1a9891e47b65e9ab9b28c85258959357253db0db5c926c7ce4cc5e666b1994']
+    #     tag: [''2.0.0-cnb',
+                # 'sha256-9d8e012da12e6449723114fb484bae12459cc9cb501c17eac03e7b1ccb743369.sig',
+                # '2.0.0-buildx-amazoncorretto-17-alpine3-15',
+                # 'sha256-53809537e15bb78d5eef05e810577d53eb8b0840a808e121326328737690a037.sig',
+                # '2.0.0-kaniko-curated-alpine3.16-openjdk17',
+                # 'sha256-e19c7a251682fd8b439a9588bab8b1ca13c4db2ba559ed8ecda2715b2300fe45.sig',
+                # '2.0.0-kaniko-amazoncorretto-17-alpine3-15',
+                # 'sha256-d55bd9a9f00f2aca315904f80f5f1c445038fc7a62665e93c6da977f6b04bf6b.sig',
+                # '2.0.0-buildx-distroless-java17-debian11',
+                # 'sha256-9c301b40bcfbdd8ff0bdcdc21b1f8087fad48af8866df570c91d662fd20f7355.sig',
+                # '2.0.0-buildx-eclipse-temurin-17-jre-jammy']
     steps:
       - name: Delete image
         uses: bots-house/ghcr-delete-image-action@main
@@ -21,5 +31,4 @@ jobs:
           name: spring-music
           token: ${{ secrets.GHCR_TOKEN }}
           #tag: ${{ matrix.tag }}
-          #tag: latest
           untagged-keep-latest: 1
