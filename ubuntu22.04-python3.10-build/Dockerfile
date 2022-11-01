@@ -17,4 +17,4 @@ RUN pip3 install requests cyclonedx-bom
 RUN rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 # switch to non-root user
-USER devsecops
+#USER devsecops
