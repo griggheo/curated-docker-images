@@ -1,4 +1,4 @@
-FROM ghcr.io/codepraxis-io/ubuntu22.04:base
+FROM ghcr.io/codepraxis-io/ubuntu22.04:run
 
 ENV DEBIAN_FRONTEND=noninteractive
 
