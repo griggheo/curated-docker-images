@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 jobs:
   pipeline:
-    uses: codepraxis-io/github-actions/.github/workflows/curated-docker-build-scan-push-workflow.yml@main
+    uses: codepraxis-io/github-actions/.github/workflows/docker-build-scan-push-workflow.yml@main
     with:
       docker_context_dir: ubuntu22.04-python3.10-build
       docker_image_name: ubuntu22.04
