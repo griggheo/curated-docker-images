@@ -5,6 +5,7 @@ RUN set -eux \
     #&& apk --no-cache add alpine-sdk \
     && apk --no-cache add \
     bash \
+    build-base \
     ca-certificates \
     curl \
     gettext \
