@@ -2,8 +2,6 @@ FROM ghcr.io/codepraxis-io/ubuntu22.04:base
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV go_version=1.18.6
-ENV cosign_version=1.13.1
-ENV crane_version=0.12.0
 ENV ko_version=0.12.0
 
 USER root
@@ -14,25 +12,6 @@ USER root
 #&& tar -C /usr/local -xzf /tmp/go${go_version}.linux-amd64.tar.gz \
 #&& mv /usr/local/go /usr/local/go${go_version} \
 #&& ln -snf /usr/local/go${go_version}/bin/go /usr/local/bin/go
-
-# install cosign
-RUN \
-cd /tmp \
-&& wget "https://github.com/sigstore/cosign/releases/download/v${cosign_version}/cosign-linux-amd64" \
-&& mv cosign-linux-amd64 /usr/local/bin/cosign \
-&& chmod +x /usr/local/bin/cosign
-
-# install crane and gcrane
-RUN \
-mkdir -p /tmp/crane \
-&& cd /tmp/crane \
-&& curl -sL "https://github.com/google/go-containerregistry/releases/download/v${crane_version}/go-containerregistry_Linux_x86_64.tar.gz" > go-containerregistry.tar.gz \
-&& tar xvfz go-containerregistry.tar.gz \
-&& mv *crane /usr/local/bin \
-&& crane version \
-&& gcrane version \
-&& cd /tmp \
-&& rm -rf crane
 
 # install ko
 RUN \
