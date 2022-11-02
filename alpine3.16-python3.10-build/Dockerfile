@@ -16,4 +16,5 @@ RUN pip3 install requests \
 RUN rm -rf /var/cache/apk/*
 
 USER devsecops
+WORKDIR /home/devsecops
 

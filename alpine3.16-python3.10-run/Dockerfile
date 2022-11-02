@@ -11,3 +11,4 @@ RUN rm -rf /var/cache/apk/*
 
 # switch to non-root user
 USER devsecops
+WORKDIR /home/devsecops
