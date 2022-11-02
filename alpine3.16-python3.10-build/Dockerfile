@@ -15,3 +15,5 @@ RUN pip3 install requests \
 # Cleanup
 RUN rm -rf /var/cache/apk/*
 
+USER devsecops
+
