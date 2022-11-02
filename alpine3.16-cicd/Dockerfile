@@ -1,4 +1,4 @@
-FROM ghcr.io/codepraxis-io/library/alpine:3.16
+FROM ghcr.io/codepraxis-io/alpine3.16:python3.10-build
 
 ENV cosign_version=1.13.1
 ENV crane_version=0.12.0
@@ -41,7 +41,6 @@ mkdir -p /tmp/crane \
 && cd /tmp \
 && rm -rf crane
 
-
 # install ko
 RUN \
 mkdir -p /tmp/ko \
@@ -55,15 +54,11 @@ mkdir -p /tmp/ko \
 
 # install trivy
 RUN \
-wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | apt-key add - \
-&& echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | tee -a /etc/apt/sources.list.d/trivy.list \
-&& apt-get update \
-&& apt-get install trivy
+curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin v0.34.0
 
 # install semgrep
 RUN \
-apt-get install -y python3-pip \
-&& python3 -m pip install semgrep
+python3 -m pip install semgrep
 
 # install grype
 RUN \
