@@ -11,7 +11,6 @@ RUN set -eux \
     build-base \
     ca-certificates \
     curl \
-    docker-cli \
     gettext \
     git \
     gnupg \
