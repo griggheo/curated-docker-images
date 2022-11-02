@@ -4,6 +4,7 @@ USER root
 
 # Install python, pip and venv
 RUN apk add python3 \
+  && apk add python3-dev \
   && apk add py3-pip \
   && apk add py3-virtualenv
 
