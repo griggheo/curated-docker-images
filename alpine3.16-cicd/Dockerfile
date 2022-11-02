@@ -74,16 +74,6 @@ curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -
 RUN \
 echo 'PATH=$PATH:$HOME/go/bin' >> /root/.bashrc
 
-# add user with UID and GID 1000 to be used instead of root
-ENV USER_ID=1000
-ENV GROUP_ID=1000
-ENV USER_NAME=devsecops
-ENV GROUP_NAME=devsecops
-ENV USER_HOMEDIR=/home/devsecops
-
-RUN addgroup -g ${GROUP_ID} ${GROUP_NAME} \
-    && adduser -u ${USER_ID} -G ${GROUP_NAME} -D -h ${USER_HOMEDIR} ${USER_NAME}
-
 # Cleanup
 RUN rm -rf /var/cache/apk/*
 
