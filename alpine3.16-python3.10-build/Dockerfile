@@ -15,10 +15,6 @@ RUN pip3 install requests \
 # Cleanup
 RUN rm -rf /var/cache/apk/*
 
-# /__w directory is used as workdir by GitHub Actions
-RUN mkdir -p /__w \
-  && chown devsecops:devsecops /__w
-  
-USER devsecops
+#USER devsecops
 WORKDIR /home/devsecops
 
