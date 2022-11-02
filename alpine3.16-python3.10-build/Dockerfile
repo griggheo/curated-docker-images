@@ -13,5 +13,3 @@ RUN pip3 install requests
 # Cleanup
 RUN rm -rf /var/cache/apk/*
 
-# switch to non-root user
-USER devsecops
