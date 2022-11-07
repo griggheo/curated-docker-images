@@ -1,0 +1,25 @@
+name: docker-image-debian11-base
+
+on:
+  schedule:
+    - cron: '0 7 * * *'
+  push:
+    branches:
+      - main
+    paths:
+      - debian11-base
+      - .github/workflows/docker-image-debian11-base.yml
+  workflow_dispatch:
+jobs:
+  pipeline:
+    uses: codepraxis-io/github-actions/.github/workflows/docker-build-scan-push-workflow.yml@main
+    with:
+      docker_context_dir: debian11-base
+      docker_image_name: debian11
+      docker_image_tag: base
+    secrets:
+      destination_registry_username: ${{ secrets.GH_PACKAGES_USERNAME }} 
+      destination_registry_password: ${{ secrets.GH_PAT }}
+      cosign_private_key: ${{ secrets.COSIGN_PRIVATE_KEY }} 
+      cosign_private_key_password: ${{ secrets.COSIGN_PRIVATE_KEY_PASSWORD }}
+      cosign_public_key: ${{ secrets.COSIGN_PUBLIC_KEY }}

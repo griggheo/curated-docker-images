@@ -1,4 +1,3 @@
-FROM ghcr.io/codepraxis-io/library/ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV cosign_version=1.13.1

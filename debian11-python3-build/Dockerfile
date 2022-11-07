@@ -1,4 +1,4 @@
-FROM ghcr.io/codepraxis-io/library/debian:11-slim
+FROM ghcr.io/codepraxis-io/debian11:base
 
 ENV DEBIAN_FRONTEND=noninteractive
 
