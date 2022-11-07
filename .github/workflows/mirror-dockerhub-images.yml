@@ -14,7 +14,7 @@ jobs:
     uses: codepraxis-io/github-actions/.github/workflows/docker-image-mirror-workflow.yml@main
     with:
       upstream-registry: registry.hub.docker.com
-      upstream-image-list: '["library/ubuntu:22.04", "library/alpine:3.16", "library/amazoncorretto:17.0.4-alpine3.15", "library/eclipse-temurin:17-jre-jammy"]'
+      upstream-image-list: '["library/ubuntu:22.04", "library/alpine:3.16", "library/debian:11-slim", "library/amazoncorretto:17.0.4-alpine3.15", "library/eclipse-temurin:17-jre-jammy"]'
     secrets:
       DESTINATION_REGISTRY_USERNAME: ${{ secrets.GH_PACKAGES_USERNAME }} 
       DESTINATION_REGISTRY_PASSWORD: ${{ secrets.GH_PAT }}
