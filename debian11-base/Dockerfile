@@ -1,3 +1,4 @@
+FROM ghcr.io/codepraxis-io/library/debian:11-slim
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV cosign_version=1.13.1
