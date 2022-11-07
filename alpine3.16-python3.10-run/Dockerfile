@@ -1,4 +1,4 @@
-FROM ghcr.io/codepraxis-io/alpine3.16:build
+FROM ghcr.io/codepraxis-io/alpine3.16:run
 
 USER root
 
