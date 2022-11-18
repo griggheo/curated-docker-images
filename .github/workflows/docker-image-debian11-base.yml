@@ -1,8 +1,8 @@
 name: docker-image-debian11-base
 
 on:
-  schedule:
-    - cron: '0 7 * * *'
+  # schedule:
+  #   - cron: '0 7 * * *'
   push:
     branches:
       - main

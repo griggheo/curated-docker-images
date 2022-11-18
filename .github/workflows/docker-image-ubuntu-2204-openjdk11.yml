@@ -1,8 +1,8 @@
 name: docker-image-ubuntu-2204-openjdk11
 
 on:
-  schedule:
-    - cron: '0 7 * * *'
+  # schedule:
+  #   - cron: '0 7 * * *'
   push:
     branches:
       - main
