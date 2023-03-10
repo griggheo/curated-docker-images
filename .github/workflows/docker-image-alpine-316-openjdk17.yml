@@ -1,8 +1,8 @@
 name: docker-image-alpine-316-openjdk17
 
 on:
-  # schedule:
-  #   - cron: '0 7 * * *'
+  schedule:
+    - cron: '0 7 * * *'
   push:
     branches:
       - main
